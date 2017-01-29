@@ -6,9 +6,9 @@ body {
 .shape {
   height: 150px;
   width: 150px;
-  background-color: #0074d9;
-  border-radius: 5px;
+  background-color: "white";
+  border-radius: 80px;
   margin-bottom: 30px;
   float: left;
-  margin-right: 20px;
+
 }

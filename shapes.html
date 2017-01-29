@@ -5,6 +5,7 @@
 
 <body>
 <button type="button" onclick="createShape()">Generate a Shape</button>
+<br>
 <div id="newShape" class="shape"></div>
 
 
@@ -13,10 +14,18 @@ function createShape() {
   document.getElementById("newShape").style.background = getRandomColor();
   document.getElementById("newShape").style.borderRadius = getRandomBorder();
 
+  var w = Math.floor(Math.random() * document.body.clientWidth);
+  var h = Math.floor(Math.random() * document.body.clientWidth);
+  document.getElementById('newShape').style.marginLeft = w;
+  document.getElementById('newShape').style.marginTop = h;
+
+}
+function getRandomPlacement() {
+
 }
 function getRandomBorder() {
   var border = Math.floor(Math.random() * 80);
-  return border;
+  return border+"px";
 }
 
 function getRandomColor() {
