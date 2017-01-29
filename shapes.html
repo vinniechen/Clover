@@ -4,27 +4,37 @@
 </head>
 
 <body>
+<input type="text" id="textfield"><br>
 <button type="button" onclick="createShape()">Generate a Shape</button>
 <br>
-<div id="newShape" class="shape"></div>
+<div id="newShape" class="shape">
+  <text class="text" id="enteredText"></text>
+</div>
 
 
 <script>
 function createShape() {
+
+  document.getElementById("enteredText").innerHTML = document.getElementById("textfield").value;
   document.getElementById("newShape").style.background = getRandomColor();
   document.getElementById("newShape").style.borderRadius = getRandomBorder();
 
-  var w = Math.floor(Math.random() * document.body.clientWidth);
-  var h = Math.floor(Math.random() * document.body.clientWidth);
+  var size = Math.floor(Math.random() * 160);
+  document.getElementById("newShape").style.height = size+"px";
+  document.getElementById("newShape").style.width = size+"px";
+
+  var w = Math.floor(Math.random() * Math.floor(document.body.offsetWidth*(3/4)));
+  var h = Math.floor(Math.random() * Math.floor(document.body.offsetWidth*(1/3)));
   document.getElementById('newShape').style.marginLeft = w;
   document.getElementById('newShape').style.marginTop = h;
 
 }
-function getRandomPlacement() {
+function getRandomSize() {
 
 }
+
 function getRandomBorder() {
-  var border = Math.floor(Math.random() * 80);
+  var border = Math.floor((Math.random()+.3) * 80);
   return border+"px";
 }
 
