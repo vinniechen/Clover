@@ -16,10 +16,11 @@
 function createShape() {
 
   document.getElementById("enteredText").innerHTML = document.getElementById("textfield").value;
+  document.getElementById("enteredText").style.color = getRandomColor();
   document.getElementById("newShape").style.background = getRandomColor();
   document.getElementById("newShape").style.borderRadius = getRandomBorder();
 
-  var size = Math.floor(Math.random() * 160);
+  var size = Math.floor(Math.random() * 170);
   document.getElementById("newShape").style.height = size+"px";
   document.getElementById("newShape").style.width = size+"px";
 
